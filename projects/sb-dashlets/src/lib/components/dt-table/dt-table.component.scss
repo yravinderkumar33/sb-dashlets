@@ -13,7 +13,7 @@
     .dataTables_wrapper .dataTables_info,
     .dataTables_wrapper .dataTables_processing,
     .dataTables_wrapper .dataTables_paginate {
-        margin: 1rem 0 !important;
+        margin-bottom: 1rem !important;
         text-align: right !important;
     }
 
@@ -47,4 +47,8 @@
             }
         }
     }
+}
+
+.dt-header{
+    position: relative;
 }

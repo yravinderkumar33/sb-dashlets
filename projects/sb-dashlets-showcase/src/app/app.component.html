@@ -53,7 +53,7 @@
     </ng-template>
 
     <ng-template sbTemplateRef="header" let-config>
-      <div role="alert" class="table-btn">
+      <div role="alert" class="table-btn" style="position: absolute; top:0.5rem;">
         <button type="button" class="export-btn" *ngFor="let option of config?.exportOptions"
           (click)="lib?.instance?.exportAs(option)">{{option | titlecase}}</button>
       </div>
