@@ -1,35 +1,16 @@
-// .header {
-//     overflow: hidden;
-//     background-color: #f1f1f1;
-//     padding: 1.5rem 0.75rem;
-//   }
-  
-//   .header a {
-//     float: left;
-//     color: black;
-//     text-align: center;
-//     padding: 0.75rem;
-//     text-decoration: none;
-//     font-size: 18px; 
-//     border-radius: 0.25rem;
-//   }
-  
-//   .header a.logo {
-//     font-size: 1.5rem;
-//     font-weight: bold;
-//   }
-  
-//   .header a:hover {
-//     background-color: #ddd;
-//     color: #000;
-//   }
-  
-//   .header a.active {
-//     background-color: #024f9d;
-//     color: #fff;
-//   }
-  
-//   .header-right {
-//     float: right;
-//   }
+.dt-header,
+.dt-footer {
+    margin: 0.5rem 0;
+}
 
+.dt-filter {
+    margin: 1rem 0.5rem 0;
+}
+
+@media only screen and (min-width: 1200px) {
+    .ui .container {
+        width: 1127px;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+}

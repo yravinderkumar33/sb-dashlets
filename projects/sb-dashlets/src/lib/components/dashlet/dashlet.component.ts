@@ -15,7 +15,7 @@ const transformTemplates = (result: object, current: { slot: string, templateRef
 @Component({
   selector: 'sb-dashlet',
   templateUrl: './dashlet.component.html',
-  styleUrls: ['./dashlet.component.css']
+  styleUrls: ['./dashlet.component.scss']
 })
 export class DashletComponent implements OnInit {
 

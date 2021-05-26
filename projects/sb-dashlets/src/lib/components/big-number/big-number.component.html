@@ -1,34 +1,43 @@
-<ng-template #defaultTemplate let-config>
-  <div class="dt-cards">
-      <div class="content">
-        <div class="header">{{config?.inputParameters?.header}}</div>
-        <div class="meta">{{config?.inputParameters?.footer}}</div>
-        <div class="description">
-          {{config?.inputParameters?.data}}
+<div class="ui container">
+  <div class="dashlet-card">
+    <ng-template #defaultTemplate let-config>
+      <div class="dt-cards">
+        <div class="content">
+          <div class="header">{{config?.inputParameters?.header}}</div>
+          <div class="meta">{{config?.inputParameters?.footer}}</div>
+          <div class="description">
+            {{config?.inputParameters?.data}}
+          </div>
         </div>
       </div>
-    </div>
-</ng-template>
+    </ng-template>
+  </div>
 
-<ng-template #defaultFilterTemplate let-context>
-  <sb-dashlets-filters [data]="context?.data" [config]="context?.config?.filters"
-    (filteredData)="update({data: $event})">
-  </sb-dashlets-filters>
-</ng-template>
+  <div class="dt-filter">
+    <ng-template #defaultFilterTemplate let-context>
+      <sb-dashlets-filters [data]="context?.data" [config]="context?.config?.filters"
+        (filteredData)="update({data: $event})">
+      </sb-dashlets-filters>
+    </ng-template>
+  </div>
 
-<ng-container *ngIf="$context?.config?.filters" [ngTemplateOutlet]="templateRefs?.filter || defaultFilterTemplate"
-  [ngTemplateOutletContext]="{'$implicit': $context}">
-</ng-container>
+  <ng-container *ngIf="$context?.config?.filters" [ngTemplateOutlet]="templateRefs?.filter || defaultFilterTemplate"
+    [ngTemplateOutletContext]="{'$implicit': $context}">
+  </ng-container>
 
+  <div class="dt-header">
+    <ng-container *ngIf="templateRefs?.header && $context" [ngTemplateOutlet]="templateRefs?.header"
+      [ngTemplateOutletContext]="{'$implicit': $context}">
+    </ng-container>
+  </div>
 
-<ng-container *ngIf="templateRefs?.header && $context" [ngTemplateOutlet]="templateRefs?.header"
-  [ngTemplateOutletContext]="{'$implicit': $context}">
-</ng-container>
+  <ng-container *ngIf="$context" [ngTemplateOutlet]="templateRefs?.body || defaultTemplate"
+    [ngTemplateOutletContext]="{'$implicit': $context}">
+  </ng-container>
 
-<ng-container *ngIf="$context" [ngTemplateOutlet]="templateRefs?.body || defaultTemplate"
-  [ngTemplateOutletContext]="{'$implicit': $context}">
-</ng-container>
-
-<ng-container *ngIf="templateRefs?.footer && $context" [ngTemplateOutlet]="templateRefs?.footer"
-  [ngTemplateOutletContext]="{'$implicit': $context}">
-</ng-container>
+  <div class="dt-footer">
+    <ng-container *ngIf="templateRefs?.footer && $context" [ngTemplateOutlet]="templateRefs?.footer"
+      [ngTemplateOutletContext]="{'$implicit': $context}">
+    </ng-container>
+  </div>
+</div>
