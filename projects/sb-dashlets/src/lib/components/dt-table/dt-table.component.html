@@ -1,5 +1,4 @@
-<div class="ui container">
-  <div class="dt-filter">
+ <div class="dt-filter">
     <ng-template #defaultFilterTemplate let-context>
       <sb-dashlets-filters [data]="context?.data" [config]="context?.config?.filters"
         (filteredData)="update({data: $event})">
@@ -24,5 +23,3 @@
       [ngTemplateOutletContext]="{'$implicit': $context}">
     </ng-container>
   </div>
-
-</div>
