@@ -7,7 +7,7 @@ import { runAggregator } from './operations';
 @Component({
   selector: 'sb-big-number',
   templateUrl: './big-number.component.html',
-  styleUrls: ['./big-number.component.css'],
+  styleUrls: ['./big-number.component.scss'],
   providers: [
     {
       provide: DEFAULT_CONFIG_TOKEN,

@@ -1,0 +1,137 @@
+.dt-container {
+  display: inline-block;
+  width: 100% !important;
+  min-width: 100%;
+  overflow: hidden;
+
+  .dt-alert {
+    position: relative;
+    padding: 1.5rem 1rem;
+    margin: 1rem 0rem;
+    border: 1px solid transparent;
+    border-left: 3px solid grey;
+    border-radius: .25rem;
+    box-shadow: 1px 2px 3px -2px rgba(0, 0, 0, 0.35);
+    color: #444444;
+
+    .alert-description {
+      font-size: 14px;
+      line-height: 1.2;
+      color: #1f8035;
+    }
+  }
+
+  .alert-primary {
+    background: #edf4f9;
+    border-left-color: #7ab4ee;
+  }
+
+  .alert-danger {
+    background: #fbccd1;
+    border-left-color: #ff4558;
+  }
+
+  .dt-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(292px, 1fr));
+    grid-gap: 1rem;
+    margin: 1rem 0;
+  }
+
+  .export-btn {
+    border: 0;
+    padding: 0.5rem 1rem;
+    background: #024f9d;
+    color: #fff;
+    margin-top: 1rem;
+    float: right;
+    cursor: pointer;
+    border-radius: 0.25rem;
+  }
+
+  @media only screen and (min-width: 1200px) {
+    .ui .container {
+      width: 1127px;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+  }
+
+  .btn-group {
+    margin: 1rem 0;
+
+    button {
+      background: #679fc8;
+      border: 1px solid #024f9d;
+      color: white;
+      padding: 8px 24px;
+      cursor: pointer;
+      float: left;
+
+      &:not(:last-child) {
+        border-right: none;
+      }
+
+      &:hover {
+        background: #024f9d;
+      }
+    }
+
+    &:after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+  }
+}
+
+::ng-deep {
+  .dataTables_wrapper {
+    overflow-x: auto;
+  }
+
+  table.dataTable.no-footer {
+    border-bottom: 1px solid #878181;
+    font-size: 0.875rem;
+  }
+
+  .dataTables_wrapper .dataTables_length,
+  .dataTables_wrapper .dataTables_filter,
+  .dataTables_wrapper .dataTables_info,
+  .dataTables_wrapper .dataTables_processing,
+  .dataTables_wrapper .dataTables_paginate {
+    margin: 1rem 0 !important;
+    text-align: right !important;
+  }
+
+  thead {
+    background: #024f9d;
+    color: #fff;
+    text-align: left;
+  }
+
+  table.dataTable tbody th,
+  table.dataTable tbody td {
+    .btn-group {
+      display: flex;
+
+      .btn-danger {
+        background: #ff0000;
+        color: #fff;
+        padding: 0.75rem 1rem;
+        border: none;
+        cursor: pointer;
+        min-width: 80px;
+      }
+
+      .btn-warning {
+        background: #ffa500;
+        color: #fff;
+        padding: 0.75rem 1rem;
+        border: none;
+        cursor: pointer;
+        min-width: 80px;
+      }
+    }
+  }
+}
