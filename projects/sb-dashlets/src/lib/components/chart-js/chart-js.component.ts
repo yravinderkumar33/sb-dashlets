@@ -14,7 +14,7 @@ import defaultConfiguration from './defaultConfiguration'
 @Component({
   selector: 'sb-chart-js',
   templateUrl: './chart-js.component.html',
-  styleUrls: ['./chart-js.component.css'],
+  styleUrls: ['./chart-js.component.scss'],
   providers: [
     {
       provide: DEFAULT_CONFIG,

@@ -11,7 +11,7 @@ declare var $;
 @Component({
   selector: 'sb-dt-table',
   templateUrl: './dt-table.component.html',
-  styleUrls: ['./dt-table.component.css'],
+  styleUrls: ['./dt-table.component.scss'],
   providers: [
     {
       provide: DEFAULT_CONFIG,
@@ -19,6 +19,7 @@ declare var $;
     }
   ]
 })
+
 export class DtTableComponent extends BaseComponent implements AfterViewInit {
 
   private _dtClosure: any;

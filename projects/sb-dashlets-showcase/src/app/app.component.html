@@ -1,94 +1,65 @@
-<div class="container">
-  <div class="row">
+<sb-dashlet [type]="'bar'" [data]="data" [config]="config2">
+  <ng-template sbTemplateRef="header" let-config>
+    <p style="background: blue;padding: 1em;"> Following Charts shows the UP State Device Data using Dashlet Widget.
+    </p>
+  </ng-template>
+</sb-dashlet>
 
-    <div class="alert alert-primary mt-3" role="alert">
-      Following Charts shows the UP State Device Data using Dashlet Widget.
+<sb-dashlet [type]="'pie'" [data]="data" [config]="config2">
+  <ng-template sbTemplateRef="footer" let-config>
+    <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+      <button (click)="lib2?.instance?.exportAs(option)" type="button" *ngFor="let option of config?.exportOptions"
+        class="btn btn-outline-success">{{option |
+                titlecase}}</button>
     </div>
-  </div>
+  </ng-template>
+</sb-dashlet>
 
-  <div class="row">
-    <div class="col-sm mt-5">
-      <sb-dashlet [type]="type" [data]="data" [config]="config2" #lib2>
-        <ng-template sbTemplateRef="header" let-config>
-          <div class="btn-group btn-group-sm float-end" role="group" aria-label="Basic mixed styles example">
-            <button (click)="lib2?.instance?.exportAs(option)" type="button"
-              *ngFor="let option of config?.exportOptions" class="btn btn-outline-success">{{option |
+<sb-dashlet [type]="type" [data]="data" [config]="config2" #lib2>
+  <ng-template sbTemplateRef="header" let-config>
+    <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+      <button (click)="lib2?.instance?.exportAs(option)" type="button" *ngFor="let option of config?.exportOptions"
+        class="btn btn-outline-success">{{option |
               titlecase}}</button>
-          </div>
-        </ng-template>
-      </sb-dashlet>
     </div>
-    <div class="col-sm mt-5">
-      <sb-dashlet [type]="'bar'" [data]="data" [config]="config2">
-        <ng-template sbTemplateRef="footer" let-config>
-          <div class="btn-group btn-group-sm float-end" role="group" aria-label="Basic mixed styles example">
-            <button (click)="lib2?.instance?.exportAs(option)" type="button"
-              *ngFor="let option of config?.exportOptions" class="btn btn-outline-success">{{option |
-              titlecase}}</button>
-          </div>
-        </ng-template>
-        <ng-template sbTemplateRef="footer" let-config>
-          <div class="btn-group btn-group-sm float-end" role="group" aria-label="Basic mixed styles example">
-            <button (click)="lib2?.instance?.exportAs(option)" type="button"
-              *ngFor="let option of config?.exportOptions" class="btn btn-outline-success">{{option |
-              titlecase}}</button>
-          </div>
-        </ng-template>
-      </sb-dashlet>
-    </div>
-    <div class="col-sm mt-5">
-      <sb-dashlet [type]="'pie'" [data]="data" [config]="config2"></sb-dashlet>
-    </div>
-    <div class="col-sm mt-5">
-      <sb-dashlet [type]="'doughnut'" [data]="data" [config]="config2" #lib>
-      </sb-dashlet>
-    </div>
-    <div class="col-sm mt-5">
-      <sb-dashlet [type]="'pie'" [data]="data" [config]="config"></sb-dashlet>
-    </div>
-    <div class="col-sm mt-5">
-      <sb-dashlet [type]="'bar'" [data]="data" [config]="config2">
-        <ng-template sbTemplateRef="footer" let-config>
-          <div class="alert alert-primary" role="alert">
-            Disclamer: - A Sample Disclamer Message
-          </div>
-        </ng-template>
-      </sb-dashlet>
-    </div>
-    <div class="col-sm mt-5">
-      <sb-dashlet [type]="'bigNumber'" [data]="data" [config]="bigNumberConfig">
-      </sb-dashlet>
-    </div>
-    <div class="col-sm mt-5">
-      <sb-dashlet [type]="'bigNumber'" [data]="data" [config]="bigNumberConfig2"></sb-dashlet>
-    </div>
-    <div class="col-sm mt-5">
-      <sb-dashlet [type]="'bigNumber'" [data]="data" [config]="bigNumberConfig3"></sb-dashlet>
-    </div>
-    <div class="col-sm mt-5">
-      <sb-dashlet [type]="'bigNumber'" [data]="data" [config]="bigNumberConfig4"></sb-dashlet>
-    </div>
-  </div>
-  <div class="row mt-5">
-    <div class="col-lg mt-2">
-      <sb-dashlet [type]="'table'" [data]="data" [config]="columnsConfiguration" #lib>
-        <ng-template sbTemplateRef="header" let-config>
-          <div role="alert">
-            <button type="button" *ngFor="let option of config?.exportOptions" class="btn btn-outline-primary float-end"
-              (click)="lib?.instance?.exportAs(option)">{{option | titlecase}}</button>
-          </div>
+  </ng-template>
+</sb-dashlet>
 
-          <!-- <div class="alert alert-secondary" role="alert">
-            A simple Header. Check this Out !!!
-          </div> -->
-        </ng-template>
+<sb-dashlet [type]="'doughnut'" [data]="data" [config]="config2" #lib></sb-dashlet>
+<sb-dashlet [type]="'pie'" [data]="data" [config]="config"></sb-dashlet>
 
-        <ng-template sbTemplateRef="footer" let-config>
-          <div class="alert alert-danger" role="alert">
-            <span class="text-center">Dashlets Footer Content (Total Data Count :- {{config?.data?.length}} )</span>
-          </div>
-        </ng-template>
-      </sb-dashlet>
+
+<sb-dashlet [type]="'bar'" [data]="data" [config]="config2">
+  <ng-template sbTemplateRef="header" let-config>
+    <div role="alert">
+      <button type="button" *ngFor="let option of config?.exportOptions" class="export-btn"
+        (click)="lib?.instance?.exportAs(option)">{{option | titlecase}}</button>
     </div>
-  </div>
+  </ng-template>
+</sb-dashlet>
+
+
+<sb-dashlet [type]="'bigNumber'" [data]="data" [config]="bigNumberConfig"></sb-dashlet>
+<sb-dashlet [type]="'bigNumber'" [data]="data" [config]="bigNumberConfig2"></sb-dashlet>
+<sb-dashlet [type]="'bigNumber'" [data]="data" [config]="bigNumberConfig3"></sb-dashlet>
+<sb-dashlet [type]="'bigNumber'" [data]="data" [config]="bigNumberConfig4"></sb-dashlet>
+
+<div>
+  <sb-dashlet [type]="'table'" [data]="data" [config]="columnsConfiguration" #lib>
+
+    <ng-template sbTemplateRef="footer" let-config>
+      <p style="background: yellowgreen;padding: 1em;"> Following Charts shows the UP State Device Data using Dashlet
+        Widget.</p>
+    </ng-template>
+
+    <ng-template sbTemplateRef="header" let-config>
+      <div role="alert" class="table-btn" style="position: absolute; top:0.5rem;">
+        <button type="button" class="export-btn" *ngFor="let option of config?.exportOptions"
+          (click)="lib?.instance?.exportAs(option)">{{option | titlecase}}</button>
+      </div>
+    </ng-template>
+
+  </sb-dashlet>
+
+  <!-- <table datatable [dtOptions]="dtOptions" class="row-border hover"></table> -->
 </div>
