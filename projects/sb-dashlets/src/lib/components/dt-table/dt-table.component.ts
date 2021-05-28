@@ -22,20 +22,6 @@ declare var $;
 
 export class DtTableComponent extends BaseComponent implements AfterViewInit {
 
-  dtTable =[
-    {
-      district:'Agra',
-      device:455,
-      plays:3822,
-      status:'Action'
-    },
-    {
-      district:'Mathura',
-      device:445,
-      plays:3302,
-      status:'Action'
-    }
-  ]
   private _dtClosure: any;
 
   public reportType: IReportType = IReportType.TABLE;
